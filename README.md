@@ -51,7 +51,8 @@ $ ngrok http 3000
 - 購入済みのFAXに対応した050番号を選択します。
 - ACCEPT INCOMING を Faxes に変更します。
 - CONFIGURE WITH を Webhooks, or TwiML Bins or Functions に変更します。
-- A FAX COMES IN を Webhook にし、先程起動した ngrok の URL に /receive を加えたURLを記載します。
+- A FAX COMES IN を Webhook にし、先程起動した ngrok の URL に /receive を加えたURLを記載します。  
+例：　https://XXXXXXX.ngrok.io/receive
 - 保存ボタンを押して、設定を保存します。
 
 ## 使い方
@@ -66,7 +67,10 @@ $ ngrok http 3000
 - 送信したいPDFファイルを、ローカルのstaticフォルダに格納します。
 - 以下のURLを使ってFAXを送信します。
 
-*ngrokで表示されたURL*/sendfax?to=*送信先FAX番号を0から始まる形式で指定*&pdf=*staticフォルダに格納したPDFファイルの名前(例:sample.pdf)*
+*ngrokで表示されたURL*/sendfax?to=*送信先FAX番号を0から始まる形式で指定*&pdf=*staticフォルダに格納したPDFファイルの名前*
 
-toを省略すると、環境変数の TO が利用されます。
-pdfを省略すると、staticフォルダの中のsample.pdfが送信されます。
+例：
+https://XXXXXXX.ngrok.io/sendfax?to=03XXXXXXXX&pdf=test.pdf
+
+- toを省略すると、環境変数の TO が利用されます。
+- pdfを省略すると、staticフォルダの中のsample.pdfが送信されます。
