@@ -8,3 +8,6 @@
 # sending FAX folder
 static/*
 !sample.pdf
+
+# receive FAX folder
+FAX/*
